@@ -1,20 +1,26 @@
 
 /* ==========================================
-   HOMELAB / CATPPUCCIN MOCHA
+   HOMELAB / CATPPUCCIN MACCHIATO
    Blog-inspired minimal dashboard
    ========================================== */
 
+
+/* Catppuccin Macchiato */
 :root {
-  --ctp-base: #1e1e2e;
-  --ctp-mantle: #181825;
-  --ctp-crust: #11111b;
-  --ctp-surface0: #313244;
-  --ctp-surface1: #45475a;
-  --ctp-text: #cdd6f4;
-  --ctp-subtext: #a6adc8;
-  --ctp-overlay: #6c7086;
-  --ctp-mauve: #cba6f7;
+  --ctp-base: #24273a;
+  --ctp-mantle: #1e2030;
+  --ctp-crust: #181926;
+
+  --ctp-surface0: #363a4f;
+  --ctp-surface1: #494d64;
+
+  --ctp-text: #cad3f5;
+  --ctp-subtext: #a5adcb;
+  --ctp-overlay: #6e738d;
+
+  --ctp-mauve: #c6a0f6;
 }
+
 
 html,
 body,
@@ -133,7 +139,7 @@ body {
 
 .services-list .service-card:hover {
   border-color: var(--ctp-mauve) !important;
-  background: #242436 !important;
+  background: var(--ctp-surface0) !important;
 }
 
 /* Service titles */
@@ -224,7 +230,7 @@ body {
 
 
 /* Homelab — Final Polish */
-/* Catppuccin Mocha */
+/* Catppuccin Macchiato */
 
 /* More breathing room between cards */
 .services-list {
@@ -233,8 +239,8 @@ body {
 
 /* Softer hover effect */
 .services-list .service-card:hover {
-  border-color: rgba(203, 166, 247, 0.45) !important;
-  background: #242436 !important;
+  border-color: rgba(198, 160, 246, 0.45) !important;
+  background: var(--ctp-surface0) !important;
 }
 
 /* Subtle card transitions */
@@ -254,7 +260,7 @@ body {
 
 /* ==========================================
    HOMELAB — WIDGET METRICS REFINEMENT
-   Catppuccin Mocha
+   Catppuccin Macchiato
    ========================================== */
 
 /* Widget metric container */
@@ -284,7 +290,7 @@ body {
   font-size: 20px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
-  color: #cdd6f4 !important;
+  color: var(--ctp-text) !important;
   font-variant-numeric: tabular-nums;
 }
 
@@ -294,7 +300,7 @@ body {
   font-weight: 400 !important;
   line-height: 1.35 !important;
   letter-spacing: 0.04em;
-  color: #a6adc8 !important;
+  color: var(--ctp-subtext) !important;
   text-transform: uppercase;
 }
 
@@ -326,7 +332,7 @@ body {
 
 /* ======================================
    HOMELAB — SCALABLE LAYOUT
-   Catppuccin Mocha
+   Catppuccin Macchiato
    ====================================== */
 
 /* Allow the page to grow naturally */
