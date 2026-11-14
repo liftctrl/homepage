@@ -1,0 +1,365 @@
+
+/* ==========================================
+   HOMELAB / CATPPUCCIN MOCHA
+   Blog-inspired minimal dashboard
+   ========================================== */
+
+:root {
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext: #a6adc8;
+  --ctp-overlay: #6c7086;
+  --ctp-mauve: #cba6f7;
+}
+
+html,
+body,
+#__next {
+  background: var(--ctp-base) !important;
+  color: var(--ctp-text) !important;
+}
+
+body {
+  background-image: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   HERO — blog style
+   ========================================== */
+
+#mocha-home-hero {
+  position: relative;
+  width: min(100%, 720px);
+  height: 250px;
+  margin: 0 auto 20px;
+  box-sizing: border-box;
+}
+
+.mocha-brand {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.mocha-brand-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: var(--ctp-text);
+}
+
+.mocha-brand-title span {
+  color: var(--ctp-mauve);
+}
+
+.mocha-brand p {
+  margin: 14px auto 0;
+  max-width: 520px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ctp-subtext);
+}
+
+.mocha-clock {
+  position: absolute;
+  top: 185px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+#mocha-clock-time {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ctp-text);
+}
+
+#mocha-clock-date {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--ctp-overlay);
+}
+
+/* ==========================================
+   SERVICES — confirmed DOM selectors
+   ========================================== */
+
+/* Restrict the width of each service group */
+.services-list {
+  width: min(100%, 620px) !important;
+  max-width: 620px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+
+/* Each service wrapper */
+.services-list > .service {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Individual cards */
+.services-list .service-card {
+  width: 100% !important;
+  min-height: 135px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 0 !important;
+  box-sizing: border-box !important;
+
+  background: var(--ctp-mantle) !important;
+  border: 1px solid var(--ctp-surface0) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+
+  color: var(--ctp-text) !important;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease !important;
+}
+
+.services-list .service-card:hover {
+  border-color: var(--ctp-mauve) !important;
+  background: #242436 !important;
+}
+
+/* Service titles */
+.service-card .service-title {
+  min-height: 42px;
+}
+
+.service-card .service-title-text {
+  color: var(--ctp-text) !important;
+}
+
+.service-card .service-title-text .font-bold,
+.service-card .service-title-text .font-semibold {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+/* Descriptions */
+.service-card .service-title-text .text-xs {
+  color: var(--ctp-subtext) !important;
+  font-size: 12px !important;
+}
+
+/* Widget labels */
+.service-card .service-container .text-xs {
+  font-size: 12px !important;
+  color: var(--ctp-subtext) !important;
+}
+
+.service-card .service-container .text-sm {
+  font-size: 14px !important;
+}
+
+/* Widget values */
+.service-card .service-container .text-base,
+.service-card .service-container .text-lg {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--ctp-text) !important;
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 640px) {
+  #mocha-home-hero {
+    width: 100%;
+    height: 235px;
+    padding: 0 16px;
+  }
+
+  .mocha-brand {
+    top: 55px;
+  }
+
+  .mocha-brand-title {
+    font-size: 40px;
+  }
+
+  .mocha-brand p {
+    max-width: 310px;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  .mocha-clock {
+    top: 172px;
+  }
+
+  .services-list {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    gap: 10px !important;
+  }
+
+  .services-list .service-card {
+    min-height: 125px !important;
+    padding: 16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none !important;
+  }
+}
+
+
+/* Homelab — Final Polish */
+/* Catppuccin Mocha */
+
+/* More breathing room between cards */
+.services-list {
+  gap: 16px !important;
+}
+
+/* Softer hover effect */
+.services-list .service-card:hover {
+  border-color: rgba(203, 166, 247, 0.45) !important;
+  background: #242436 !important;
+}
+
+/* Subtle card transitions */
+.services-list .service-card {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease !important;
+}
+
+/* Slightly clearer widget values */
+.service-card .service-container .text-base,
+.service-card .service-container .text-lg {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+
+
+/* ==========================================
+   HOMELAB — WIDGET METRICS REFINEMENT
+   Catppuccin Mocha
+   ========================================== */
+
+/* Widget metric container */
+.service-card .service-container {
+  margin-top: 14px !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+/* Individual metric block */
+.service-card .service-block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 6px !important;
+  margin: 0 !important;
+  padding: 8px 4px !important;
+
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Metric value */
+.service-card .service-block-value {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #cdd6f4 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Metric label */
+.service-card .service-block-label {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.04em;
+  color: #a6adc8 !important;
+  text-transform: uppercase;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .service-card .service-container {
+    gap: 6px !important;
+  }
+
+  .service-card .service-block {
+    gap: 5px !important;
+    padding: 6px 2px !important;
+  }
+
+  .service-card .service-block-value {
+    font-size: 17px !important;
+  }
+
+  .service-card .service-block-label {
+    font-size: 10px !important;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* 为每个分组底部预留间距 */
+.services-list {
+  margin-bottom: 16px !important;
+}
+
+/* ======================================
+   HOMELAB — SCALABLE LAYOUT
+   Catppuccin Mocha
+   ====================================== */
+
+/* Allow the page to grow naturally */
+html,
+body {
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+/* Cards can expand with their content */
+.services-list .service-card {
+  height: auto !important;
+  min-height: 135px !important;
+}
+
+/* Keep the same centered width */
+.services-list {
+  width: min(100%, 620px) !important;
+  margin-inline: auto !important;
+}
+
+/* Long metric values should not overflow */
+.service-card .service-block {
+  min-width: 0;
+}
+
+.service-card .service-block-value {
+  overflow-wrap: anywhere;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .services-list .service-card {
+    min-height: 125px !important;
+  }
+}

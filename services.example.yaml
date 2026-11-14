@@ -1,0 +1,60 @@
+
+---
+# Homelab — Homepage Services
+# Sanitized configuration for public sharing
+
+- Workspace:
+    - FreshRSS:
+        icon: freshrss.png
+        href: http://YOUR_SERVER_IP:FRESHRSS_PORT
+        description: RSS Reader
+        widget:
+          type: freshrss
+          url: http://YOUR_SERVER_IP:FRESHRSS_PORT
+          username: YOUR_USERNAME
+          password: YOUR_API_PASSWORD
+          fields:
+            - unread
+            - subscriptions
+
+    - Wallos:
+        icon: wallos.png
+        href: http://YOUR_SERVER_IP:WALLOS_PORT
+        description: Subscriptions
+        widget:
+          type: wallos
+          url: http://YOUR_SERVER_IP:WALLOS_PORT
+          key: YOUR_API_KEY
+          fields:
+            - activeSubscriptions
+            - nextRenewingSubscription
+            - thisMonthlyCost
+
+- Infrastructure:
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://YOUR_SERVER_IP:UPTIME_KUMA_PORT
+        description: Service Monitoring
+        widget:
+          type: uptimekuma
+          url: http://YOUR_SERVER_IP:UPTIME_KUMA_PORT
+          slug: YOUR_STATUS_PAGE_SLUG
+          fields:
+            - up
+            - down
+            - uptime
+
+    - Beszel:
+        icon: beszel.png
+        href: http://YOUR_SERVER_IP:BESZEL_PORT
+        description: System Monitoring
+        widget:
+          type: beszel
+          url: http://YOUR_SERVER_IP:BESZEL_PORT
+          username: YOUR_EMAIL
+          password: YOUR_PASSWORD
+          version: 2
+          fields:
+            - systems
+            - up
+

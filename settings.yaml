@@ -1,0 +1,22 @@
+title: Homelab
+description: Personal Dashboard
+
+theme: dark
+color: slate
+language: en
+
+headerStyle: clean
+cardStyle: hairline
+disableCollapse: true
+fullWidth: false
+
+layout:
+  Workspace:
+    style: row
+    columns: 1
+    header: false
+
+  Infrastructure:
+    style: row
+    columns: 1
+    header: false
